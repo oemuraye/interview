@@ -21,18 +21,17 @@ export async function POST(req) {
         const transporter = nodemailer.createTransport({
           service: "Gmail",
           auth: {
-            user: "oemuraye@gmail.com",
-            pass: "koolqqrjvvumygqt",
+            user: process.env.auth_email,
+            pass: process.env.gmail_password,
           },
         });
 
-        console.log(formInfo);
 
         const mailOptions = {
-          from: "oemuraye@gmail.com",
-          to: "augustine.ibenta@nationdelivery.com",
+          from: process.env.sender_email,
+          to: process.env.recipient_email,
           subject: "Form Submission",
-          text: output,
+          html: output,
         };
 
         const info = await transporter.sendMail(mailOptions);

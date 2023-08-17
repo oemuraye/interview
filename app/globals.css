@@ -18,7 +18,7 @@ header {
   gap: 5px;
   background-color: #f48023;
   border-radius: 5px;
-  padding: 7px 15px;
+  padding: 7px 10px;
   color: #fff;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
@@ -32,10 +32,17 @@ header {
   background-color: #fff;
   color: #f48023;
   border-radius: 5px;
-  padding: 7px 15px;
+  padding: 7px 10px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   text-decoration: none;
+}
+.nav-reg:hover {
+  transform: scale(0.98);
+}
+.nav-log:hover {
+  color: #fff;
+  background-color: #f48023;
 }
 .form-page img {
   height: 100vh;

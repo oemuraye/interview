@@ -71,9 +71,9 @@ const Auth = () => {
 
   return (
     <main className="form-page">
-        <section className="row">
+        <section className="row container-fluid">
             <div className="col-md-4 col-sm-12 d-flex justify-content-center">
-                <div className="d-flex flex-column gap-3 mt-5">
+                <div className="d-flex flex-column gap-3 mt-5 px-3">
                     <h2>We've Missed you</h2>
                     <p className="info">Kindly signin and get first access to the very best, community and unlock more opportunities.</p>
                     <form onSubmit={handleSubmit} >

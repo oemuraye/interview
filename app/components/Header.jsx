@@ -5,7 +5,7 @@ import regIcon from '../../utils/img/reg.svg';
 
 const Header = () => {
   return (
-    <header className="px-4 p-3">
+    <header className="p-3">
         <nav className="d-flex align-items-center justify-content-between">
             <Image src={logo} alt="brand-logo" />
             <div className="d-flex gap-3">
