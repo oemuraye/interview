@@ -12,6 +12,7 @@ const initialState = {
 const Auth = () => {
     const [formData, setFormData] = useState(initialState);
     const [formError, setFormError] = useState([]);
+    const [loading, setLoading] = useState();
 
     const handleChange = (e) => {
         e.preventDefault();
@@ -22,6 +23,7 @@ const Auth = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true)
 
         setFormError([]);
         let errors = [];
@@ -35,6 +37,7 @@ const Auth = () => {
 
         setFormError(errors);
         if (errors.length > 0) {
+            setLoading(false)
             return;
         } else {
             await sendInfo(formData);
@@ -42,7 +45,6 @@ const Auth = () => {
     };
 
     const sendInfo = async (formInfo) => {
-        console.log(formInfo);
         try {
             const request = await fetch('/api/auth', {
                 method: 'POST',
@@ -53,6 +55,7 @@ const Auth = () => {
             });
             const response = await request.json();
 
+            setLoading(false)
             setFormData(initialState);
             console.log(response);
         } catch (error) {
@@ -79,12 +82,13 @@ const Auth = () => {
                         </div>)}
                         <div className="mb-3">
                             <label htmlFor="email">Email</label>
-                            <input name="email" onChange={handleChange} type="text" className="form-control" />
+                            <input name="email" onChange={handleChange} value={formData.email} type="text" className="form-control" />
                         </div>
                         <div className="mb-3">
                             <label htmlFor="email">Password</label>
-                            <input name="password" onChange={handleChange} type="text" className="form-control" />
+                            <input name="password" onChange={handleChange} value={formData.password} type="text" className="form-control" />
                         </div>
+                        {loading && (<div className="d-flex justify-content-center mt-3"><span className='spinner-border spinner-border-sm text-secondary' role="status"></span></div>)}
                         <button className="form-btn w-100"> Login </button>
                     </form>
                     <Link className='link' href="">Forgot username or password?</Link>

