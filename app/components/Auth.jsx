@@ -9,7 +9,7 @@ import '../globals.css'
 const initialState = {
     email: '',
     password: ''
-}
+};
 const Auth = () => {
     const [formData, setFormData] = useState(initialState);
     const [formError, setFormError] = useState([]);
