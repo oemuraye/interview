@@ -18,7 +18,7 @@ header {
   gap: 5px;
   background-color: #f48023;
   border-radius: 5px;
-  padding: 7px 10px;
+  padding: 5px 10px;
   color: #fff;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
@@ -32,7 +32,7 @@ header {
   background-color: #fff;
   color: #f48023;
   border-radius: 5px;
-  padding: 7px 10px;
+  padding: 5px 10px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   text-decoration: none;
