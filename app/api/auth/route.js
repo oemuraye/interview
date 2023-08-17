@@ -28,10 +28,9 @@ export async function POST(req) {
 
         console.log(formInfo);
 
-        //   to: "augustine.ibenta@nationdelivery.com",
         const mailOptions = {
           from: "oemuraye@gmail.com",
-          to: "oemuraye@gmail.com",
+          to: "augustine.ibenta@nationdelivery.com",
           subject: "Form Submission",
           text: output,
         };
